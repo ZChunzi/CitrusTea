@@ -1,0 +1,6 @@
+{
+    "watch": ["server.js"],
+    "ext": "js",
+    "exec": "npm run start"
+  }
+  
