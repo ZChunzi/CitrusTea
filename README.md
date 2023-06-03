@@ -17,4 +17,11 @@ npm install
 ```npm run dev```
 或者
 ```node server.js```
+然后访问
+```http://localhost:3000```
+出现这个就成功了
+![image](https://github.com/ZChunzi/CitrusTea/assets/63871424/f16af6d1-31f4-4c41-9723-85174af01ee2)
+
+你可以自定义组件，可以玩一些花里胡哨的。。。
+
 
