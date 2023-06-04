@@ -16,11 +16,11 @@ app.use('/api', createProxyMiddleware({
 }));
 
 //配置运行目录
-app.use(serveStatic(path.join(__dirname, '/')))
+app.use(serveStatic(path.join(__dirname, '/src')))
 
 //适配前端路由
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/', 'index.html'))
+    res.sendFile(path.join(__dirname, '/src', 'index.html'))
 })
 
 app.listen(3000, () => {
