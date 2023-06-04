@@ -37,6 +37,12 @@ npm install
 
 ![image](https://github.com/ZChunzi/CitrusTea/assets/63871424/f16af6d1-31f4-4c41-9723-85174af01ee2)
 
+编译：
+
+```npm run build```
+
+编译后的文件将出现在dist文件夹里
+
 你可以自定义组件，可以玩一些花里胡哨的。。。
 
 有一说一，很像Vue。。。
