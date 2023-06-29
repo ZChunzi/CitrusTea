@@ -1,28 +1,30 @@
-const express = require('express')
-const serveStatic = require('serve-static')
+const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const path = require('path')
+const path = require('path');
+const tea = require('./tea');
 const app = express();
 
-app.use(express.static('public'));
+//tea
 
-//此处配置代理
+app.use(tea) 
+
+// 配置静态文件目录
+app.use(express.static(path.join(__dirname, 'src')));
+
+// 配置代理
 app.use('/api', createProxyMiddleware({
-    target: 'http://127.0.0.1:8080',
-    changeOrigin: true,
-    pathRewrite: {
-        '^/api': '/',
-    },
+  target: 'http://127.0.0.1:8080',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '/',
+  },
 }));
 
-//配置运行目录
-app.use(serveStatic(path.join(__dirname, '/src')))
-
-//适配前端路由
+// 适配前端路由
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/src', 'index.html'))
-})
+  res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
 
 app.listen(3000, () => {
-    console.log('App listening on port 3000!');
+  console.log('App listening on http://localhost:3000');
 });

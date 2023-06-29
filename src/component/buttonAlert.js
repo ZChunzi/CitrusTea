@@ -27,7 +27,8 @@ export const ButtonAlert = async ({requestFunction, value, duration,className}) 
  * @param {string} data 弹窗显示的文本内容
  * @param {number} duration 弹窗显示的持续时间（单位：毫秒）
  */
-export const AlertMessage = async (data, duration) => {
+export const AlertMessage = async (data, duration=2000) => {
+    let app = document.getElementsByTagName('body')[0]
     const style = {
         position: "fixed",
         top: "10%",

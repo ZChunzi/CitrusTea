@@ -13,11 +13,15 @@
         rel="stylesheet">
     <title>Citrus Tea</title>
     <style>
+        *{
+            transition: .8s;
+        }
         body {
             text-align: center;
             background-color: rgb(27, 73, 123);
             font-family: 'Inter', sans-serif;
             color: white;
+            transition: .8s;
         }
 
         a {
@@ -49,6 +53,23 @@
             transition: .8s;
 
         }
+        button {
+            background-color: rgba(15, 112, 210, 0.733);
+            border: none;
+            color: white;
+            border-radius: 3px;
+            word-spacing: 2px;
+            font-size: 0.7em;
+            padding: 0.7em;
+            margin: 1em;
+            transition: .8s;
+        }
+
+        button:hover {
+            background-color: rgba(42, 142, 241, 0.868);
+            transition: .8s;
+
+        }
 
         .me {
             font-family: 'Noto Sans SC', sans-serif;
@@ -65,16 +86,35 @@
             height: 5em;
             line-height: 10em;
         }
+        input{
+            background-color: rgba(240, 248, 255, 0.248);
+            border:0px rgb(255, 255, 255) solid;
+            width: 15%;
+            height: 2em;
+            margin: 5px;
+            color: aliceblue;
+            border-radius: 3px;
+            padding-left: 1em;
+        }
+        #app{
+            text-align: center;
+            background-color: rgb(27, 73, 123);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            font-family: 'Noto Sans SC', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            transition: .8s;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Citrus Tea</h1><a href="/home">Home</a> <a href="/about">About</a> <a href="/poem">Poem</a><br><br><br><img
-        src="./img/a.webp" alt="">
+    <h1>Citrus Tea</h1><a href="/home">Home</a> <a href="/about">About</a> <a href="/poem">Poem</a><a href="/tea">Tea</a><br><br><br><img
+        src="/img/a.webp" alt="">
     <p class="me">This is a fun-filled front-end framework that aims to make website development an enjoyable
         experience.<br>Despite being a work in progress, come and join us in the joy of building your own website.</p>
     <div id="app"></div>
-    <div class="botton"><a href="#">&copy;Power By Citrus Tea</a></div>
+    <div class="botton"><a href="http://ctea.io">&copy;Power By Citrus Tea</a></div>
 </body>
-<script type="module" src="./view/index.js"></script>
+<script src="/app.js" type="module"></script>
 </html>

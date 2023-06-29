@@ -1,0 +1,46 @@
+<view>
+    <div>测试页2</div>
+    <button @click="exit()">
+        退出
+    </button>
+    <button @click="testfunc('3')">测试输出</button>
+    <button @click="send">发送</button>
+</view>
+<script>
+    import { exit } from '../api/login.js'
+    const testfunc = (value) => {
+        console.log(value);
+    }
+    //import { WebSocketTool } from '../component/websocket.js'
+    // 客户端
+    // const id = prompt('请输入您的ID:');
+    // const socket = new WebSocket('ws://localhost:8080/socket');
+
+    // // 在连接建立后发送ID给服务端
+    // socket.onopen = () => {
+    //     console.log('连接已建立');
+    //     socket.send(id);
+    // };
+
+    // socket.onmessage = (event) => {
+    //     console.log('收到消息:', event.data);
+    // };
+
+    // // 发送消息给指定客户端
+    // function sendMessage(to, content) {
+    //     const message = {
+    //         type: 'send',
+    //         to: to,
+    //         content: content
+    //     };
+
+    //     socket.send(JSON.stringify(message));
+    // }
+
+    // // 输入指定的ID并发送消息
+    // const send = () =>{
+    //     const targetID = prompt('请输入要发送消息的目标ID:');
+    //     const messageContent = prompt('请输入消息内容:');
+    //     sendMessage(targetID, messageContent);
+    // }
+</script>

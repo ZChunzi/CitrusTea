@@ -21,7 +21,7 @@ entryFiles.forEach(file => {
 module.exports = {
     mode: 'production',
     entry: {
-  index: 'view/index.js'
+  app: 'app/app.js'
 },
     output: {
         path: path.resolve(__dirname, 'dist'), // 输出目录路径

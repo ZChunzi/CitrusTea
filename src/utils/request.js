@@ -44,4 +44,3 @@ export const $put = async(url,params)=>{
 export const $setToken = async(token) =>{
   instance.setHeader('Authorization',token)
 }
-
