@@ -20,18 +20,18 @@ export const $get = async(url,params)=>{
  * @param {string} url 请求的 URL
  * @param {object} params 请求的参数对象
  * @returns {Promise} 返回包含响应数据的 Promise 对象
- */
+*/
 export const $post = async(url,params)=>{
   let {data} = await instance.post(url,params)
   return data
 }
 
 /**
- * 发起 POST 请求
+ * 发起 PUT 请求
  * @param {string} url 请求的 URL
  * @param {object} params 请求的参数对象
  * @returns {Promise} 返回包含响应数据的 Promise 对象
- */
+*/
 export const $put = async(url,params)=>{
   let{data} = await instance.put(url,params)
   return data

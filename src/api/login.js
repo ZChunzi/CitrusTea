@@ -19,7 +19,7 @@ export const exit = () => {
         AlertMessage("您还未登录");
         return
     }
-    sessionStorage.clear('token')
+    sessionStorage.removeItem('token')
     AlertMessage("您已退出");
     $setToken("")
     goRouter('/tea')
