@@ -20,6 +20,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack --config webpack.config.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "node tests/run-tests.js"
   }
 }

@@ -25,7 +25,7 @@ export const routes = {
                     alert("New Route2222");
                 },
                 routes: {
-                    "/infomation": {
+                    "/information": {
                         handler: async () => {
                             alert("New Route333");
                         },
