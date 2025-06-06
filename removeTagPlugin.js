@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PLUGIN_NAME = 'RemoveTagPlugin';
-
+//移除指定标签
 class RemoveTagPlugin {
   constructor(options) {
     this.options = options;

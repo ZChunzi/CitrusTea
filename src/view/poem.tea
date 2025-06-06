@@ -13,4 +13,17 @@
         溯洄从之，道阻且右。
         溯游从之，宛在水中沚。
     </pre>
+    <div id="tt2">
+
+    </div>
+    <button @click="go">测试</button>
 </view>
+<script>
+    let co = 0
+    const go = () => {
+        const tt2 = document.getElementById("tt2")
+        tt2.innerHTML = co
+        co++
+    }
+    function test() { }
+</script>

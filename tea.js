@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const UglifyJS = require('uglify-js');
-
+const utils = require('./core/tea-core-utils/extractor')
+const core = require('./core/tea-core-modules/teacore')
 async function obfuscateCode(code) {
   const options = {
     compress: true,
@@ -60,14 +61,19 @@ async function tea(req, res, next) {
               eval(clickFunction+'()');
           });
       }
-  }`
+  }
+  `
   if (req.url.endsWith('.tea')) {
     const filePath = path.join(__dirname, 'src', req.url);
     const teaContent = fs.readFileSync(filePath, 'utf8');
     const viewContent = teaContent.match(/<view>([\s\S]+)<\/view>/i)[1];
     const addjs = `<script src='/component/tea.js'></script>`//增加加载js
     let jsCode = `
+    if (tag){
+      document.getElementById(tag).innerHTML = \`${viewContent}\`;
+    }else{
       document.getElementById('app').innerHTML = \`${viewContent}\`;
+    }  
     `;
     // Check if <style></style> tags exist in the teaContent
     const styleTags = teaContent.match(/<style>([\s\S]+)<\/style>/gi);
@@ -100,7 +106,7 @@ async function tea(req, res, next) {
     }
 
     //let filename = extractFileName(req.url)
-    let j = `export default function() {${jsCode}}`
+    let j = `export default function(tag) {${jsCode}}`
     const js = moveImportsToTop(j)
     //混淆算法
     const objs = await obfuscateCode(js)

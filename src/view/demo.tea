@@ -8,6 +8,8 @@
         password：<input type="password" id="Tea-login-password" value="admin" warn="Please enter a password"><br>
         <button @click="TeaLogin" class="test">login</button>
         <button @click="exit" class="test">exit</button>
+        <p id="num"></p>
+        <button @click="addPlus">点击+1</button>
     </div>
     <button @click="send()">发送</button>
 </view>
@@ -15,10 +17,29 @@
 <script>
     import { goRouter } from '../../app.js'
     import { TeaLoginForm } from '../test/loginForm.js'
-    import { login,exit } from '../api/login.js'
+    import { login, exit } from '../api/login.js'
+    import tea from './poem.tea'
+
+    const render = async(node,f) => {
+        const app = await document.getElementById("app")
+        const newTag = await document.createElement("div")
+        newTag.id = node
+        app.appendChild(newTag)
+        f(node)
+    }
+
+    render("tea",tea)
+
 
     const gohome = () => {
         goRouter('/home')
+    }
+
+    let num = 0
+    const addPlus = () => {
+        const numP = document.getElementById('num')
+        numP.innerText = num
+        num++
     }
 
     const TeaLogin = async () => {
